@@ -62,7 +62,7 @@ export const StakedToken = ({
         {tk.stakeEntry?.parsed?.lastStaker.toString() !==
           wallet.publicKey?.toString() && (
           <div>
-            <div className="absolute top-0 left-0 z-10 flex h-full w-full justify-center rounded-xl bg-black bg-opacity-80  align-middle text-white">
+            <div className="absolute top-0 left-0 z-10 flex h-full w-full justify-center rounded-xl bg-black bg-opacity-80 align-middle text-white">
               <div className="mx-auto flex flex-col items-center justify-center">
                 <div>Owned by</div>
                 <DisplayAddress
@@ -105,11 +105,22 @@ export const StakedToken = ({
             background: stakePoolMetadata?.colors?.backgroundSecondary,
           }}
         >
-          <div className="truncate px-2 text-xl font-bold">
+          <div className="truncate text-xl font-bold">
             {getNameFromTokenData(tk, mintJson?.data)}
           </div>
           <div className="truncate font-semibold">
             {tk.tokenListData?.symbol}
+          </div>
+          <div>
+            Total Seconds Staked:{' '}
+            {tk.stakeEntry?.parsed.totalStakeSeconds.toNumber()}
+          </div>
+          <div>
+            Multiplier:{' '}
+            {tk.stakeEntry?.parsed.multiplierStakeSeconds?.toNumber()}
+          </div>
+          <div>
+            XP: {tk.stakeEntry?.parsed.multiplierStakeSeconds?.toNumber()}
           </div>
           <StakedStats tokenData={tk} />
           <div className="flex p-2">

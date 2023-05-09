@@ -79,7 +79,7 @@ export const UnstakedToken = ({
             background: stakePoolMetadata?.colors?.backgroundSecondary,
           }}
         >
-          <div className="mb-2 truncate px-2 text-xl font-bold">
+          <div className="mb-2 truncate text-xl font-bold">
             {getNameFromTokenData(tk, mintJson?.data)}
           </div>
           {!!tk.tokenListData?.symbol && (
@@ -87,6 +87,9 @@ export const UnstakedToken = ({
               {tk.tokenListData?.symbol}
             </div>
           )}
+          <div>Total Seconds Staked:</div>
+          <div>Multiplier:</div>
+          <div>XP:</div>
           {tk.tokenAccount &&
             tk.tokenAccount?.parsed.tokenAmount.amount > 1 && (
               <div className="mt-2">
@@ -115,7 +118,7 @@ export const UnstakedToken = ({
                 </div>
               </div>
             )}
-          <div className="flex p-2">
+          <div className="mx-2 mt-6 mb-2 flex">
             <button
               style={{
                 background:
