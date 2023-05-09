@@ -5,10 +5,8 @@ import { useRouter } from 'next/router'
 import { useStakePoolMetadataCtx } from 'providers/StakePoolMetadataProvider'
 
 export const useStakePoolId = () => {
+  const stakePoolId = 'aoztBMuyjdHwBhX3fnWFCF15oLqkksfDi5Kn6ERyeJE'
   const stakePoolMetadata = useStakePoolMetadataCtx()
-  const {
-    query: { stakePoolId },
-  } = useRouter()
 
   return useQuery(
     [
