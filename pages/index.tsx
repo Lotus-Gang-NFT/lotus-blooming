@@ -1,4 +1,3 @@
-import { FooterSlim } from 'common/FooterSlim'
 import { Header } from 'common/Header'
 import { StakePoolNotice } from 'components/StakePoolNotice'
 import { useRewardDistributorData } from 'hooks/useRewardDistributorData'
