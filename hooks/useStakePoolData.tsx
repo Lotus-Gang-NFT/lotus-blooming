@@ -8,7 +8,7 @@ import {
 } from '@cardinal/rewards-center'
 import type { StakePoolData } from '@cardinal/staking/dist/cjs/programs/stakePool'
 import {
-  STAKE_POOL_ADDRESS,
+  // STAKE_POOL_ADDRESS,
   STAKE_POOL_IDL,
 } from '@cardinal/staking/dist/cjs/programs/stakePool'
 import { BorshAccountsCoder } from '@coral-xyz/anchor'
@@ -21,6 +21,10 @@ import { PublicKey } from '@solana/web3.js'
 import { useQuery } from '@tanstack/react-query'
 import { useStakePoolId } from 'hooks/useStakePoolId'
 import { useEnvironmentCtx } from 'providers/EnvironmentProvider'
+
+const STAKE_POOL_ADDRESS = new PublicKey(
+  '9zrSRyHPR6DQJW8NF7UNB6Ce22P2bGF9HcH1XUv5QzwV'
+)
 
 export const useStakePoolData = () => {
   const { data: stakePoolId } = useStakePoolId()

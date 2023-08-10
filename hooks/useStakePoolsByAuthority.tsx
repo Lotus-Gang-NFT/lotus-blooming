@@ -3,16 +3,20 @@ import type { IdlAccountData } from '@cardinal/rewards-center'
 import { rewardsCenterProgram } from '@cardinal/rewards-center'
 import type { StakePoolData } from '@cardinal/staking/dist/cjs/programs/stakePool'
 import {
-  STAKE_POOL_ADDRESS,
+  // STAKE_POOL_ADDRESS,
   STAKE_POOL_IDL,
 } from '@cardinal/staking/dist/cjs/programs/stakePool'
 import { BorshAccountsCoder, utils } from '@coral-xyz/anchor'
-import type { Connection, PublicKey } from '@solana/web3.js'
+import { Connection, PublicKey } from '@solana/web3.js'
 import { useQuery } from '@tanstack/react-query'
 import { useEnvironmentCtx } from 'providers/EnvironmentProvider'
 
 import { stakePoolDataToV2 } from './useStakePoolData'
 import { useWalletId } from './useWalletId'
+
+const STAKE_POOL_ADDRESS = new PublicKey(
+  '9zrSRyHPR6DQJW8NF7UNB6Ce22P2bGF9HcH1XUv5QzwV'
+)
 
 export const getStakePoolsByAuthority = async (
   connection: Connection,

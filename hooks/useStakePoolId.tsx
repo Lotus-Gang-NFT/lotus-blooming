@@ -5,7 +5,9 @@ import { useRouter } from 'next/router'
 import { useStakePoolMetadataCtx } from 'providers/StakePoolMetadataProvider'
 
 export const useStakePoolId = () => {
-  const stakePoolId = 'aoztBMuyjdHwBhX3fnWFCF15oLqkksfDi5Kn6ERyeJE'
+  const stakePoolId = new PublicKey(
+    '334PDyaV21GDBce8vDefgk1b6Yc1zvr4Xm1p1AjhLj5U'
+  )
   const stakePoolMetadata = useStakePoolMetadataCtx()
 
   return useQuery(
@@ -17,7 +19,7 @@ export const useStakePoolId = () => {
     async () => {
       if (stakePoolMetadata.data)
         return new PublicKey(stakePoolMetadata.data.stakePoolAddress)
-      return tryPublicKey(stakePoolId) ?? null
+      return tryPublicKey(stakePoolId.toString()) ?? null
     }
   )
 }

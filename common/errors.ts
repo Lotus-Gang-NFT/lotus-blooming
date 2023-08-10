@@ -11,11 +11,15 @@ import {
   REWARD_DISTRIBUTOR_IDL,
 } from '@cardinal/staking/dist/cjs/programs/rewardDistributor'
 import {
-  STAKE_POOL_ADDRESS,
+  // STAKE_POOL_ADDRESS,
   STAKE_POOL_IDL,
 } from '@cardinal/staking/dist/cjs/programs/stakePool'
 import type { Idl } from '@coral-xyz/anchor'
-import type { PublicKey, SendTransactionError } from '@solana/web3.js'
+import { PublicKey, SendTransactionError } from '@solana/web3.js'
+
+const STAKE_POOL_ADDRESS = new PublicKey(
+  '9zrSRyHPR6DQJW8NF7UNB6Ce22P2bGF9HcH1XUv5QzwV'
+)
 
 type ErrorCode = {
   code: string
